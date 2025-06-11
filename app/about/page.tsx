@@ -5,9 +5,9 @@ import { Users, Target, Award, Coffee, Code, Heart } from 'lucide-react';
 import Image from 'next/image';
 
 const stats = [
-  { number: '50+', label: 'Projects Completed' },
-  { number: '30+', label: 'Happy Clients' },
-  { number: '3+', label: 'Years Experience' },
+  { number: '15+', label: 'Projects Completed' },
+  { number: '8+', label: 'Happy Clients' },
+  { number: '1+', label: 'Years Experience' },
   { number: '24/7', label: 'Support Available' }
 ];
 
@@ -36,22 +36,34 @@ const values = [
 
 const team = [
   {
-    name: 'Rajesh Kumar',
+    name: 'Shivam Singh',
     position: 'Founder & Lead Developer',
-    image: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400',
-    description: 'Full-stack developer with 5+ years of experience in modern web technologies.'
+    image: '#',
+    description: 'Full-stack developer with 2+ years of experience in modern web technologies.'
   },
   {
-    name: 'Priya Sharma',
+    name: 'Vishal Yadav',
+    position: 'Backend Development',
+    image: '#',
+    description: 'Specialized in Node.js, Express, Django, and PostgreSQL for scalable backend development..'
+  },
+  {
+    name: 'Adarsh Dubey',
     position: 'UI/UX Designer',
-    image: 'https://images.pexels.com/photos/3785077/pexels-photo-3785077.jpeg?auto=compress&cs=tinysrgb&w=400',
+    image: '#',
     description: 'Creative designer focused on creating beautiful and intuitive user experiences.'
   },
   {
-    name: 'Amit Singh',
+    name: 'Piyush Chaturvedi',
     position: 'Mobile App Developer',
-    image: 'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400',
+    image: '#',
     description: 'Specialized in React Native and Flutter for cross-platform mobile development.'
+  },
+  {
+    name: 'Abhishek Yadav',
+    position: 'Web Development',
+    image: '#',
+    description: 'Expert in responsive, high-performance web apps using React, Next.js, and Vue.js, with API and CMS integration.'
   }
 ];
 
@@ -83,7 +95,7 @@ export default function About() {
                 Our <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Story</span>
               </h2>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                Founded in 2021, DevKool emerged from a simple vision: to bridge the gap between innovative ideas and their digital implementation. Based in the tech hub of Noida, we've grown from a small startup to a trusted partner for businesses seeking digital transformation.
+                Founded in 2025, DevKool emerged from a simple vision: to bridge the gap between innovative ideas and their digital implementation. Based in the tech hub of Noida, we've grown from a small startup to a trusted partner for businesses seeking digital transformation.
               </p>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
                 Our journey began with a commitment to excellence and a passion for cutting-edge technology. Today, we're proud to have helped numerous businesses establish their digital presence and achieve their goals through our comprehensive web and mobile solutions.

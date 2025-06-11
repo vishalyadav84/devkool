@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import emailjs from '@emailjs/browser';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
 
@@ -15,13 +16,6 @@ export default function Contact() {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Here you would typically send the form data to your backend
-    alert('Thank you for your message! We will get back to you soon.');
-    setFormData({ name: '', email: '', phone: '', service: '', message: '' });
-  };
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
@@ -29,11 +23,41 @@ export default function Contact() {
     });
   };
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const SERVICE_ID = 'service_zyowr6f';
+    const TEMPLATE_ID = 'template_ulyuzum';
+    const PUBLIC_KEY = 'IYZuBwszR035D5mdW';
+
+    // DevKool.com
+    // const SERVICE_ID = 'service_54xt4l7';
+    // const TEMPLATE_ID = 'template_rg6lm38';
+    // const PUBLIC_KEY = 'uA6HWZCsrZd-0Izdn';
+
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      phone: formData.phone,
+      service: formData.service,
+      message: formData.message,
+    };
+
+    emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
+      .then(() => {
+        alert('Message sent successfully!');
+        setFormData({ name: '', email: '', phone: '', service: '', message: '' });
+      })
+      .catch((error) => {
+        console.error('EmailJS error:', error);
+        alert('Oops! Something went wrong. Please try again later.');
+      });
+  };
+
   return (
     <main className="min-h-screen">
       <Navbar />
-      
-      {/* Hero Section */}
+
       <section className="pt-20 pb-16 bg-gradient-to-br from-blue-50 via-white to-purple-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
@@ -47,15 +71,13 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Contact Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            {/* Contact Info */}
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-8">Let's Start a Conversation</h2>
               <p className="text-lg text-gray-600 mb-8">
-                We're here to help you transform your ideas into exceptional digital experiences. 
+                We're here to help you transform your ideas into exceptional digital experiences.
                 Reach out to us through any of the following channels.
               </p>
 
@@ -99,17 +121,16 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900">Business Hours</h3>
-                    <p className="text-gray-600">Mon - Sat: 9:00 AM - 8:00 PM</p>
+                    <p className="text-gray-600">Mon - Fri: 10:00 AM - 7:00 PM</p>
                     <p className="text-sm text-gray-500">Sunday: By appointment only</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Contact Form */}
             <div className="bg-gray-50 rounded-2xl p-8">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h3>
-              
+
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
