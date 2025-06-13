@@ -16,7 +16,7 @@ const services = [
       'Content Management Systems',
       'API Integration'
     ],
-    pricing: 'Starting from ₹25,000'
+    pricing: 'Starting from ₹20,000'
   },
   {
     icon: Smartphone,
