@@ -30,7 +30,7 @@ const services = [
       'Push Notifications',
       'In-app Purchases'
     ],
-    pricing: 'Starting from ₹50,000'
+    pricing: 'Starting from ₹45,000'
   },
   {
     icon: Database,
